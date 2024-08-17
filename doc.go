@@ -1,5 +1,4 @@
 /*
-
 Package trueskill implements the TrueSkill™ ranking system (by Microsoft) in Go.
 
 Create a new instance of trueskill with the default configuration:
@@ -34,6 +33,5 @@ Check the conservative TrueSkill of a player:
 	ts := trueskill.New()
 	p1 := trueskill.NewPlayer(30, 1)
 	fmt.Println(ts.TrueSkill(p1)) // 27
-
 */
 package trueskill
