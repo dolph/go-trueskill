@@ -3,7 +3,7 @@ package collection
 import (
 	"testing"
 
-	"github.com/mafredri/go-trueskill/gaussian"
+	"github.com/dolph/trueskill/gaussian"
 )
 
 func TestDistributionBag(t *testing.T) {

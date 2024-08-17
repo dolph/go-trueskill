@@ -3,7 +3,7 @@ package trueskill
 import (
 	"testing"
 
-	"github.com/mafredri/go-trueskill/mathextra"
+	"github.com/dolph/trueskill/mathextra"
 )
 
 const defaultEpsilon = 1e-5 // Precision for floating point comparison

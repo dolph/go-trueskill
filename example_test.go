@@ -3,7 +3,7 @@ package trueskill_test
 import (
 	"fmt"
 
-	"github.com/mafredri/go-trueskill"
+	"github.com/dolph/trueskill"
 )
 
 func Example() {

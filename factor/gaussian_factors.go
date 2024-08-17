@@ -3,8 +3,8 @@ package factor
 import (
 	"math"
 
-	"github.com/mafredri/go-trueskill/collection"
-	"github.com/mafredri/go-trueskill/gaussian"
+	"github.com/dolph/trueskill/collection"
+	"github.com/dolph/trueskill/gaussian"
 )
 
 // GaussianFactors is used to perform all skill related gaussian operations and

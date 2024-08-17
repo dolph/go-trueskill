@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/mafredri/go-trueskill/mathextra"
+	"github.com/dolph/trueskill/mathextra"
 )
 
 const epsilon = 1e-13 // Precision for floating point comparison

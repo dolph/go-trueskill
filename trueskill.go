@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/mafredri/go-trueskill/collection"
-	"github.com/mafredri/go-trueskill/gaussian"
-	"github.com/mafredri/go-trueskill/schedule"
+	"github.com/dolph/trueskill/collection"
+	"github.com/dolph/trueskill/gaussian"
+	"github.com/dolph/trueskill/schedule"
 )
 
 // Constants for the TrueSkill ranking system.

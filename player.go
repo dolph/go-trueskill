@@ -3,7 +3,7 @@ package trueskill
 import (
 	"fmt"
 
-	"github.com/mafredri/go-trueskill/gaussian"
+	"github.com/dolph/trueskill/gaussian"
 )
 
 // Player is a player with a certain skill (mu, sigma).

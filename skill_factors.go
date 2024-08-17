@@ -1,9 +1,9 @@
 package trueskill
 
 import (
-	"github.com/mafredri/go-trueskill/collection"
-	"github.com/mafredri/go-trueskill/factor"
-	"github.com/mafredri/go-trueskill/schedule"
+	"github.com/dolph/trueskill/collection"
+	"github.com/dolph/trueskill/factor"
+	"github.com/dolph/trueskill/schedule"
 )
 
 type skillFactors struct {

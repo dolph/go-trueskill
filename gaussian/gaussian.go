@@ -4,7 +4,7 @@ package gaussian
 import (
 	"math"
 
-	"github.com/mafredri/go-trueskill/mathextra"
+	"github.com/dolph/trueskill/mathextra"
 )
 
 // Gaussian represents a gaussian based on a precision and a precision adjusted mean.
