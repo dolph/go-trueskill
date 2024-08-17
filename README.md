@@ -1,7 +1,5 @@
 # trueskill
 
-[![Build Status](https://travis-ci.org/dolph/trueskill.svg)](https://travis-ci.org/dolph/trueskill) [![GoDoc](https://godoc.org/dolph/trueskill?status.svg)](https://godoc.org/github.com/dolph/trueskill)
-
 This library implements the [TrueSkill™](http://research.microsoft.com/en-us/projects/trueskill/) ranking system (by Microsoft) in Go.
 
 ## Acknowledgements
