@@ -237,6 +237,81 @@ func TestTrueSkill_8PFreeForAll(t *testing.T) {
 	testProbability(t, probability, wantProbability)
 }
 
+func BenchmarkTrueSkill_58PFreeForAll(b *testing.B) {
+	drawProbability, err := DrawProbability(10.0)
+	if err != nil {
+		b.Error(err)
+	}
+	draw := false
+
+	ts := New(drawProbability)
+
+	players := []Player{
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+		ts.NewPlayer(),
+	}
+
+	for i := 0; i < b.N; i++ {
+		players, _ = ts.AdjustSkills(players, draw)
+	}
+}
+
 func TestTrueSkill_MatchQuality_HeadToHead(t *testing.T) {
 	wantMatchQuality := 44.7
 
