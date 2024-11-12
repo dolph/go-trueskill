@@ -2,7 +2,11 @@
 // run in sequences and loops.
 package schedule
 
-import "math"
+import (
+	"math"
+	"sync"
+	"sync/atomic"
+)
 
 // Runner provides an interface for the run function.
 type Runner interface {
@@ -42,12 +46,29 @@ func NewSequence(sequences ...Runner) Runner {
 // Run runs all runnable schedules in a sequence. The largest delta from any of
 // the runnable schedules is returned.
 func (s sequence) Run(depth, maxDepth int) float64 {
-	var delta float64
-	for _, s := range s.sequences {
-		delta = math.Max(delta, s.Run(depth+1, maxDepth))
+	var maxDelta uint64 // Use atomic to store the maximum delta safely
+
+	var wg sync.WaitGroup
+
+	for _, seq := range s.sequences {
+		wg.Add(1)
+		go func(seq Runner) { // seq is of type Runner, as defined in the error message
+			defer wg.Done()
+
+			subSeq, ok := seq.(sequence)
+			if !ok {
+				return
+			}
+
+			delta := subSeq.Run(depth+1, maxDepth)
+
+			atomic.CompareAndSwapUint64(&maxDelta, maxDelta, math.Float64bits(math.Max(math.Float64frombits(maxDelta), delta)))
+		}(seq)
 	}
 
-	return delta
+	wg.Wait()
+
+	return math.Float64frombits(maxDelta)
 }
 
 type loop struct {
