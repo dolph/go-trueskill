@@ -43,8 +43,8 @@ func NewSequence(sequences ...Runner) Runner {
 // the runnable schedules is returned.
 func (s sequence) Run(depth, maxDepth int) float64 {
 	var delta float64
-	for _, s := range s.sequences {
-		delta = math.Max(delta, s.Run(depth+1, maxDepth))
+	for _, runner := range s.sequences {
+		delta = math.Max(delta, runner.Run(depth+1, maxDepth))
 	}
 
 	return delta
